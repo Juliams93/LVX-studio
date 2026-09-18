@@ -59,6 +59,13 @@
   const form = document.getElementById('robot-form');
   if (!launcher || !panel || !close || !log || !input || !form) return;
   const routes = [
+    { id: 'nexusai', label: 'NexusAI', words: ['nexus', 'plataforma ia'] },
+    { id: 'reservas-empresas', label: 'Reservas para empresas', words: ['reservas para empresas', 'reservas'] },
+    { id: 'mas-proyectos', label: 'Diseño de producto', words: ['figma'] },
+    { id: 'familyhome', label: 'FamilyHOME', words: ['familyhome', 'family home'] },
+    { id: 'safewalk', label: 'SafeWalk', words: ['safewalk', 'safe walk'] },
+    { id: 'fitreserve', label: 'FitReserve Gym', words: ['fitreserve', 'gimnasio'] },
+    { id: 'gigante', label: 'La Gigante de Piedra', words: ['gigante', 'ciclismo'] },
     { id: 'meridian', label: 'Meridian', words: ['meridian', 'erp', 'crm'] },
     { id: 'libros', label: 'Libros · No es magia', words: ['libro', 'magia', 'python', 'codigo', 'leer', 'lectura'] },
     { id: 'como-empezar', label: 'Elige cómo quieres empezar', words: ['pack', 'plan', 'precio', 'presupuesto', 'contratar', 'coste', 'cuesta'] },
@@ -89,6 +96,8 @@
   const navigate = route => {
     const target = document.getElementById(route.id);
     if (!target) return;
+    const disclosure = target.closest('details');
+    if (disclosure) disclosure.open = true;
     setOpen(false);
     target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
     target.setAttribute('tabindex', '-1');
@@ -120,7 +129,7 @@
     input.value = '';
     add(text, true);
     const query = normalize(text);
-    if (/\b(familyhome|family home|safe|blog|articulos)\b/.test(query)) {
+    if (/\b(blog|articulos)\b/.test(query)) {
       add('Esa sección todavía no está disponible. Puedes explorar los proyectos actuales o contactar con Julia.');
       offer(routes.find(route => route.id === 'proyectos'));
       return;
