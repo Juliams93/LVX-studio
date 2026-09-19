@@ -1,0 +1,251 @@
+[
+  {
+    "slug": "de-la-idea-al-prototipo",
+    "title": "De una idea a un prototipo que se puede probar",
+    "category": "Diseño de producto",
+    "description": "Un recorrido práctico para convertir una necesidad real en un primer prototipo: contexto, alcance, recorrido y pruebas.",
+    "image": "/blog-producto.svg",
+    "imageAlt": "Diagrama que conecta una idea, un recorrido y un prototipo.",
+    "blocks": [
+      [
+        "p",
+        "Una idea suele llegar como una solución: «quiero una app», «necesito una web» o «podríamos añadir inteligencia artificial». El primer trabajo de diseño consiste en retroceder un paso y entender qué está intentando hacer la persona que la usará. Una pantalla bonita puede ayudar, pero no sustituye a una necesidad bien definida."
+      ],
+      [
+        "h2",
+        "1. Escribir el problema antes de dibujar la solución"
+      ],
+      [
+        "p",
+        "Imagina una pequeña academia que recibe solicitudes de clases por distintos canales. El problema no es necesariamente que le falte una aplicación. Quizá nadie sabe qué solicitudes están pendientes y se repiten preguntas sobre horarios. Este es un ejemplo hipotético, pero permite hacer preguntas concretas: ¿quién recibe la consulta?, ¿qué información necesita?, ¿cuándo se considera resuelta?"
+      ],
+      [
+        "p",
+        "Una frase de partida útil sería: «La persona que coordina las clases necesita ver las solicitudes pendientes para responder sin revisar varias conversaciones». Ya tenemos una persona, una tarea y una dificultad. Es una base mucho más precisa que una lista de funcionalidades."
+      ],
+      [
+        "h2",
+        "2. Recortar el primer recorrido"
+      ],
+      [
+        "p",
+        "Elige una sola tarea que merezca la pena probar de principio a fin. En la academia podría ser solicitar una clase y recibir una confirmación. Quedan fuera, de momento, los pagos, las estadísticas y los programas de fidelización. No desaparecen del proyecto: se guardan como decisiones futuras."
+      ],
+      [
+        "ul",
+        [
+          "Entrada: la persona encuentra una clase disponible.",
+          "Acción: elige un horario y deja los datos imprescindibles.",
+          "Resultado: ve qué ha solicitado y cuál será el siguiente paso.",
+          "Excepción: el horario ya no está disponible o falta información."
+        ]
+      ],
+      [
+        "h2",
+        "3. Dar forma a las decisiones"
+      ],
+      [
+        "p",
+        "Primero dibuja bloques: información, acción principal y resultado. Después convierte ese esquema en pantallas conectadas. Un prototipo no necesita una base de datos real para mostrar si el recorrido se entiende. Sí necesita textos creíbles y estados que representen lo que puede ocurrir, incluida una solicitud que no se puede completar."
+      ],
+      [
+        "p",
+        "El nivel de detalle debe responder a la pregunta de la prueba. Para comprobar el orden de los pasos bastan bocetos sencillos. Para evaluar si un botón se reconoce o si un mensaje resulta claro, conviene acercarse más a la interfaz final."
+      ],
+      [
+        "h2",
+        "4. Observar una tarea, sin explicar la interfaz"
+      ],
+      [
+        "p",
+        "Plantea una situación: «Quieres reservar una clase para la semana que viene». Deja que la persona intente resolverla y observa dónde duda, qué espera que ocurra y qué interpreta al terminar. Evita indicarle dónde pulsar: esa ayuda ocultaría precisamente lo que necesitas descubrir."
+      ],
+      [
+        "p",
+        "Anota hechos antes que conclusiones. «No vio el selector de horario» es más útil que «el diseño no funciona». Después ajusta una decisión concreta y vuelve a probarla. El prototipo es una herramienta para aprender, no una promesa de que el producto ya está construido."
+      ],
+      [
+        "h2",
+        "5. Preparar el paso al desarrollo"
+      ],
+      [
+        "p",
+        "Antes de programar, reúne las pantallas, los estados, los datos necesarios y las reglas que todavía generan dudas. Define también una señal de éxito: por ejemplo, completar la solicitud sin ayuda y comprender si está confirmada o pendiente. Esa claridad permite construir una primera versión pequeña y evaluar si resuelve el problema que la originó."
+      ],
+      [
+        "link",
+        "Explorar los proyectos de LVX",
+        "/#proyectos"
+      ]
+    ],
+    "date": "2026-09-19",
+    "modified": "2026-09-19",
+    "author": "LVX Studio",
+    "status": "published"
+  },
+  {
+    "slug": "primera-automatizacion-con-criterio",
+    "title": "Tu primera automatización: pequeña, útil y con control",
+    "category": "IA y automatización",
+    "description": "Cómo elegir un proceso repetitivo, distinguir reglas de IA y diseñar un flujo con revisión humana y salida para los errores.",
+    "image": "/blog-automatizacion.svg",
+    "imageAlt": "Flujo de una consulta que pasa por revisión antes de continuar.",
+    "blocks": [
+      [
+        "p",
+        "Automatizar un proceso empieza por entenderlo. Si una tarea cambia cada día, nadie sabe quién la revisa o faltan datos, conectarla a más herramientas puede multiplicar la confusión. Un buen primer proyecto tiene un inicio reconocible, un resultado concreto y una persona responsable."
+      ],
+      [
+        "h2",
+        "Elegir una tarea que se pueda explicar"
+      ],
+      [
+        "p",
+        "Piensa en una consulta que llega desde una web. Alguien copia los datos, comprueba qué necesita la persona y prepara el siguiente paso. En lugar de automatizar toda la relación comercial, se puede comenzar creando una ficha de seguimiento y una tarea interna para revisarla."
+      ],
+      [
+        "p",
+        "Dibuja el proceso actual e identifica las decisiones. Qué información llega, qué falta con frecuencia, dónde se guarda y quién actúa después. Si aparecen excepciones, escríbelas. Son parte del diseño, aunque no sean la parte más vistosa de la demo."
+      ],
+      [
+        "h2",
+        "Reglas claras o inteligencia artificial"
+      ],
+      [
+        "p",
+        "Una regla basta cuando la condición es explícita: si falta un correo, marcar la solicitud como incompleta; si ya existe el identificador del envío, evitar una segunda ficha. No hace falta pedirle a un modelo que decida algo que el sistema ya puede comprobar."
+      ],
+      [
+        "p",
+        "La IA puede tener sentido cuando hay texto libre que resumir o clasificar. Por ejemplo, proponer si una consulta trata sobre una web, una integración o una automatización. Esa propuesta puede ser incorrecta: conviene permitir la categoría «sin clasificar» y hacer visible el mensaje original para la revisión."
+      ],
+      [
+        "h2",
+        "Un primer flujo que conserva el control"
+      ],
+      [
+        "ol",
+        [
+          "Recibir la consulta y asignarle un identificador.",
+          "Validar los campos necesarios y detectar posibles duplicados.",
+          "Crear una ficha pendiente de revisión.",
+          "Si aporta valor, generar un resumen como borrador.",
+          "Avisar a la persona responsable y esperar su decisión."
+        ]
+      ],
+      [
+        "p",
+        "El contenido de una consulta es información para procesar, no una instrucción para cambiar las reglas del sistema. Tampoco debería permitir que una IA envíe mensajes, borre datos o ejecute acciones ajenas al flujo previsto. Las herramientas disponibles y los permisos deben limitarse a la tarea que se quiere resolver."
+      ],
+      [
+        "h2",
+        "Diseñar también lo que falla"
+      ],
+      [
+        "p",
+        "Prueba una consulta vacía, una repetida y una que no encaje en ninguna categoría. Simula que la herramienta de destino no responde. El flujo necesita una forma de dejar el caso pendiente sin perder el mensaje ni repetir una acción ya realizada. Una notificación interna puede ser suficiente para la primera versión."
+      ],
+      [
+        "p",
+        "Conserva únicamente los datos necesarios para el proceso y define quién puede acceder a ellos. Para las primeras pruebas, utiliza ejemplos ficticios. Antes de conectar servicios reales, revisa qué información recibirá cada uno y durante cuánto tiempo necesitas guardarla."
+      ],
+      [
+        "h2",
+        "Medir antes de ampliar"
+      ],
+      [
+        "p",
+        "Compara cuánto trabajo manual sigue haciendo falta, cuántos casos requieren corrección y si las solicitudes llegan a la persona adecuada. Una automatización útil no es la que tiene más pasos: es la que hace más fiable una tarea concreta y deja claro qué hacer cuando aparece una excepción. Después podrás decidir si merece la pena ampliar el alcance."
+      ],
+      [
+        "link",
+        "Probar la simulación de automatización de LVX",
+        "/#demo"
+      ]
+    ],
+    "date": "2026-09-19",
+    "modified": "2026-09-19",
+    "author": "LVX Studio",
+    "status": "published"
+  },
+  {
+    "slug": "python-primer-resumen-de-gastos",
+    "title": "No es magia, es Python: tu primer resumen de gastos",
+    "category": "Código y aprendizaje",
+    "description": "Un ejercicio pequeño para practicar listas, diccionarios, funciones y cantidades decimales construyendo un resumen de gastos.",
+    "image": "/blog-python.svg",
+    "imageAlt": "Ilustración de un pequeño programa de Python con un resultado de 17,00 euros.",
+    "blocks": [
+      [
+        "p",
+        "Aprender a programar resulta más concreto cuando el programa responde a una pregunta sencilla. En este ejercicio vamos a sumar tres gastos ficticios y mostrar un total. Es una práctica independiente, conectada con el enfoque de aprender construyendo de No es magia, es código; no es un extracto del libro."
+      ],
+      [
+        "h2",
+        "Un problema pequeño, con una respuesta comprobable"
+      ],
+      [
+        "p",
+        "Antes de escribir código, define la entrada y la salida. La entrada será una lista con el concepto y el importe de cada gasto. La salida será un total con dos decimales. Con los datos del ejemplo, podemos calcular a mano que el resultado debe ser 17,00 euros. Esa referencia nos ayudará a comprobar el programa."
+      ],
+      [
+        "code",
+        "from decimal import Decimal\n\ngastos = [\n    {\"concepto\": \"Cuaderno\", \"importe\": Decimal(\"4.50\")},\n    {\"concepto\": \"Transporte\", \"importe\": Decimal(\"2.50\")},\n    {\"concepto\": \"Material\", \"importe\": Decimal(\"10.00\")},\n]\n\ndef total_gastos(movimientos):\n    return sum((g[\"importe\"] for g in movimientos), Decimal(\"0.00\"))\n\ntotal = total_gastos(gastos)\nprint(f\"Total: {total:.2f} EUR\")\n"
+      ],
+      [
+        "p",
+        "Guarda el ejemplo en un archivo llamado gastos.py y ejecútalo con Python 3 en tu ordenador. No necesita paquetes adicionales. La salida será «Total: 17.00 EUR»: el punto decimal forma parte del formato elegido en este pequeño ejemplo."
+      ],
+      [
+        "h2",
+        "Qué hace cada pieza"
+      ],
+      [
+        "p",
+        "La lista reúne varios movimientos. Cada diccionario conserva un concepto y un importe, de modo que no dependemos de recordar qué representa cada posición. La función recibe esos movimientos y devuelve la suma; mostrar el resultado queda fuera de ella. Así podemos reutilizar el cálculo sin obligarlo a imprimir siempre un mensaje."
+      ],
+      [
+        "p",
+        "Decimal permite trabajar con números decimales. Aquí lo construimos a partir de cadenas como \"4.50\", en lugar de convertir primero el importe a float. La documentación oficial explica por qué determinados decimales no tienen una representación exacta en coma flotante binaria."
+      ],
+      [
+        "link",
+        "Consultar la documentación oficial de Decimal",
+        "https://docs.python.org/es/3/library/decimal.html"
+      ],
+      [
+        "h2",
+        "Comprobar algo más que el caso feliz"
+      ],
+      [
+        "code",
+        "assert total_gastos(gastos) == Decimal(\"17.00\")\nassert total_gastos([]) == Decimal(\"0.00\")\nassert total_gastos([\n    {\"concepto\": \"Prueba\", \"importe\": Decimal(\"0.10\")},\n    {\"concepto\": \"Prueba\", \"importe\": Decimal(\"0.20\")},\n]) == Decimal(\"0.30\")\n"
+      ],
+      [
+        "p",
+        "Estas comprobaciones documentan lo que esperamos: sumar la lista, devolver cero cuando está vacía y manejar el ejemplo de los céntimos. Si una condición no se cumple, Python detiene esa ejecución con un AssertionError. Son comprobaciones para practicar, no un mecanismo de validación de datos de usuarios."
+      ],
+      [
+        "h2",
+        "El siguiente reto"
+      ],
+      [
+        "p",
+        "Añade una categoría a cada movimiento y calcula cuánto corresponde a cada una. Antes de programar, escribe el resultado esperado con dos o tres ejemplos. Después decide cómo tratarías un importe vacío o un texto que no representa una cantidad."
+      ],
+      [
+        "p",
+        "Este programa utiliza datos controlados y una sola moneda. Una aplicación real necesitaría validar entradas, decidir cómo tratar devoluciones y monedas, guardar la información y gestionar los errores. No hace falta resolverlo todo hoy: comprender bien un cálculo pequeño es un punto de partida para construir con criterio."
+      ],
+      [
+        "link",
+        "Conocer No es magia, es código",
+        "/#libros"
+      ]
+    ],
+    "date": "2026-09-19",
+    "modified": "2026-09-19",
+    "author": "LVX Studio",
+    "status": "published"
+  }
+]

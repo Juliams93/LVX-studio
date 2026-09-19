@@ -15,5 +15,9 @@
         }
       ]
     }
-  ]
+  ],
+  "buildCommand": "node build-blog.mjs",
+  "outputDirectory": "dist",
+  "installCommand": "",
+  "trailingSlash": false
 }

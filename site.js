@@ -94,6 +94,10 @@
     else launcher.focus();
   };
   const navigate = route => {
+    if (route.href) {
+      window.location.assign(route.href);
+      return;
+    }
     const target = document.getElementById(route.id);
     if (!target) return;
     const disclosure = target.closest('details');
@@ -129,9 +133,9 @@
     input.value = '';
     add(text, true);
     const query = normalize(text);
-    if (/\b(blog|articulos)\b/.test(query)) {
-      add('Esa sección todavía no está disponible. Puedes explorar los proyectos actuales o contactar con Julia.');
-      offer(routes.find(route => route.id === 'proyectos'));
+    if (/\b(blog|articulos?)\b/.test(query)) {
+      add('En el blog encontrarás artículos sobre diseño de producto, automatización y código.');
+      offer({ label: 'Blog de LVX', href: '/blog' });
       return;
     }
     const route = routes.find(route => route.words.some(word => word.length <= 2 ? query.split(/\W+/).includes(word) : query.includes(word)));
