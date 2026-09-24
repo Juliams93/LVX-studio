@@ -299,3 +299,24 @@ html{scroll-padding-top:var(--header-offset,182px)}
 @media(max-width:680px){.lvx-project-grid{grid-template-columns:1fr;gap:20px}.lvx-project-copy{padding:22px}}
 
 .lvx-more-projects{margin-top:28px;border-top:1px solid var(--line);padding-top:24px}.lvx-more-projects>summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;list-style:none;padding:12px 0}.lvx-more-projects>summary::-webkit-details-marker{display:none}.lvx-more-projects summary strong{font-size:19px;font-weight:600}.lvx-more-projects summary small{display:block;color:var(--muted);margin-top:5px}.lvx-more-symbol{font-size:30px;color:var(--mint)}.lvx-more-projects[open] .lvx-more-symbol{transform:rotate(45deg)}.lvx-more-projects .lvx-project-copy ul{padding-left:20px;color:var(--muted);font-size:14px}.lvx-project-copy .lvx-prototype-note{font-size:13px;border-left:2px solid var(--mint);padding-left:12px;margin:20px 0}
+
+/* LVX Kids: a separate educational line within the studio. */
+.kids-section{background:radial-gradient(circle at 83% 47%,#224c50 0,#101e2b 30%,#0a1420 68%);overflow:hidden}
+.kids-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
+.kids-copy h2 span{color:#88e5d8}
+.kids-lede{max-width:570px;font-size:17px;line-height:1.75;color:#c0d1d4;margin:25px 0 27px}
+.kids-missions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.kids-missions>div{padding:18px 18px 14px;background:#ffffff0b;border:1px solid #8bceca40;border-radius:11px}
+.kids-missions span{display:block;color:#8be5d9;font-size:10px;letter-spacing:1.5px;font-weight:700;margin-bottom:8px}
+.kids-missions strong{display:block;font-size:16px;line-height:1.35}
+.kids-missions p{color:#b3c3cc;font-size:12px;line-height:1.5;margin:8px 0 0}
+.kids-status{display:flex;gap:9px;align-items:flex-start;color:#abcac7;font-size:12px;margin:22px 0 18px}
+.kids-status span{color:#f7bc85;font-size:18px;line-height:1}
+.kids-contact{background:#82ded2;color:#102b37;border-color:#82ded2;font-weight:700}
+.kids-visual{position:relative;min-height:425px;background:radial-gradient(circle at 50% 45%,#2e6370 0,#193b4a 46%,#132938 80%);border:1px solid #86d4ce45;border-radius:26px;display:grid;place-items:center;overflow:hidden;box-shadow:0 28px 60px #0004}
+.kids-visual svg{display:block;width:min(96%,460px);max-height:390px}
+.kids-visual-label{position:absolute;bottom:24px;right:20px;background:#faf5e9;color:#17384b;padding:9px 13px;transform:rotate(4deg);font-size:11px;letter-spacing:1.5px;box-shadow:5px 5px 0 #0003}
+.kids-visual-label span{color:#dd8e77;margin-left:7px}
+@media(min-width:1001px) and (max-width:1240px){.navrow{gap:12px}.navrow nav{gap:13px;font-size:13px}.navrow .header-brand{min-width:180px}.navrow>.contact-nav{display:none}}
+@media(max-width:850px){.kids-layout{grid-template-columns:1fr;gap:34px}.kids-visual{min-height:340px}.kids-visual svg{max-height:335px}}
+@media(max-width:520px){.kids-section{padding:65px 0}.kids-lede{font-size:15px}.kids-missions{grid-template-columns:1fr}.kids-visual{min-height:300px}.kids-visual svg{width:100%;max-height:315px}.kids-visual-label{font-size:9px;bottom:16px}}
