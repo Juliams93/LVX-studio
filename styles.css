@@ -320,3 +320,6 @@ html{scroll-padding-top:var(--header-offset,182px)}
 @media(min-width:1001px) and (max-width:1240px){.navrow{gap:12px}.navrow nav{gap:13px;font-size:13px}.navrow .header-brand{min-width:180px}.navrow>.contact-nav{display:none}}
 @media(max-width:850px){.kids-layout{grid-template-columns:1fr;gap:34px}.kids-visual{min-height:340px}.kids-visual svg{max-height:335px}}
 @media(max-width:520px){.kids-section{padding:65px 0}.kids-lede{font-size:15px}.kids-missions{grid-template-columns:1fr}.kids-visual{min-height:300px}.kids-visual svg{width:100%;max-height:315px}.kids-visual-label{font-size:9px;bottom:16px}}
+
+/* Savia: presentación del piloto */
+.savia-project-visual{background:#eaf0e6;color:#294b3b}.savia-project-visual small{color:#456350}.savia-project-visual img{display:block;margin-bottom:18px}
