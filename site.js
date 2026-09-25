@@ -18,39 +18,6 @@
 })();
 
 (() => {
-  const next = document.getElementById('demo-next');
-  const reset = document.getElementById('demo-reset');
-  const output = document.getElementById('demo-output');
-  const steps = Array.from(document.querySelectorAll('[data-demo-step]'));
-  if (!next || !reset || !output || steps.length !== 4) return;
-  const messages = [
-    ['Todo empieza con una consulta.', 'Pulsa «Probar el flujo» para ver cómo podría conectarse cada paso.'],
-    ['01 / Consulta recibida', 'Ejemplo: «Hola, me gustaría visitar el gimnasio y conocer las actividades». El flujo recibe y clasifica la consulta.'],
-    ['02 / Información organizada', 'Se prepara una ficha de ejemplo con el interés indicado y el estado «Pendiente de atención».'],
-    ['03 / Seguimiento preparado', 'Se prepara una respuesta con el siguiente paso y una tarea de seguimiento. En esta simulación no se envía ningún mensaje.'],
-    ['04 / El equipo tiene el contexto', 'El equipo recibe una tarea de ejemplo para coordinar la visita. La consulta y el seguimiento quedan organizados en un mismo recorrido.']
-  ];
-  let current = 0;
-  const render = () => {
-    steps.forEach((step, index) => {
-      step.classList.toggle('is-complete', index < current);
-      if (index === current - 1) step.setAttribute('aria-current', 'step');
-      else step.removeAttribute('aria-current');
-    });
-    const title = document.createElement('strong');
-    const body = document.createElement('p');
-    title.textContent = messages[current][0];
-    body.textContent = messages[current][1];
-    output.replaceChildren(title, body);
-    next.disabled = current === 4;
-    next.textContent = current === 4 ? 'Flujo completado ✓' : current ? 'Siguiente paso →' : 'Probar el flujo →';
-    reset.disabled = current === 0;
-  };
-  next.addEventListener('click', () => { current = Math.min(current + 1, 4); render(); });
-  reset.addEventListener('click', () => { current = 0; render(); });
-})();
-
-(() => {
   const launcher = document.getElementById('robot-launcher');
   const panel = document.getElementById('robot-panel');
   const close = document.getElementById('robot-close');
@@ -68,8 +35,8 @@
     { id: 'gigante', label: 'La Gigante de Piedra', words: ['gigante', 'ciclismo'] },
     { id: 'meridian', label: 'Meridian', words: ['meridian', 'erp', 'crm'] },
     { id: 'libros', label: 'Libros · No es magia', words: ['libro', 'magia', 'python', 'codigo', 'leer', 'lectura'] },
-    { id: 'como-empezar', label: 'Elige cómo quieres empezar', words: ['pack', 'plan', 'precio', 'presupuesto', 'contratar', 'coste', 'cuesta'] },
-    { id: 'demo', label: 'Demo de automatización', words: ['demo', 'automatiza', 'simulacion', 'probar'] },
+    { id: 'como-empezar', label: 'Cómo empezar', words: ['pack', 'plan', 'precio', 'presupuesto', 'contratar', 'coste', 'cuesta'] },
+    { id: 'demo', label: 'Demos de Savia y Rubí', words: ['demo', 'automatiza', 'simulacion', 'probar'] },
     { id: 'proceso', label: 'De idea a sistema funcionando', words: ['proceso', 'paso', 'como funciona'] },
     { id: 'servicios', label: 'Servicios LVX', words: ['servicio', 'diseno', 'desarrollo', 'agente', 'ia'] },
     { id: 'contacto', label: 'Contacto', words: ['contacto', 'contactar', 'correo', 'email', 'hablar', 'escribir', 'instagram', 'linkedin'] },

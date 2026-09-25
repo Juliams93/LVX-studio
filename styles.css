@@ -323,3 +323,15 @@ html{scroll-padding-top:var(--header-offset,182px)}
 
 /* Savia: presentación del piloto */
 .savia-project-visual{background:#eaf0e6;color:#294b3b}.savia-project-visual small{color:#456350}.savia-project-visual img{display:block;margin-bottom:18px}
+
+/* Explica la relación entre agente y panel sin añadir otro servicio. */
+.agent-web-explainer{display:grid;grid-template-columns:minmax(220px,.65fr) 1.35fr;gap:28px;align-items:start;margin-top:28px;padding:27px 30px;border:1px solid #345c58;border-radius:14px;background:linear-gradient(110deg,#103031,#101b29)}
+.agent-web-explainer .eyebrow{margin:0 0 10px}
+.agent-web-explainer h3{margin:0;font-size:clamp(20px,2vw,27px);line-height:1.25}
+.agent-web-explainer>p{margin:0;color:var(--muted);font-size:15px;line-height:1.65}
+@media(max-width:700px){.agent-web-explainer{grid-template-columns:1fr;gap:12px;padding:22px}}
+
+/* More projects fit into the first scan without cropping screenshots. */
+@media(min-width:681px){.lvx-project-image,.lvx-project-concept{aspect-ratio:2.25/1}.lvx-project-copy{padding:22px}.lvx-project-copy h3{font-size:24px}}
+
+.start-section{padding-top:40px;padding-bottom:40px;background:#0a101a}.start-panel{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:28px 32px;border:1px solid #d8c08b40;border-radius:16px;background:#14202a}.start-panel h2{font-size:clamp(23px,3vw,35px);margin:7px 0 9px}.start-panel p:not(.eyebrow){color:var(--muted);max-width:700px;margin:0;line-height:1.6}.start-panel .button{flex-shrink:0}.demo-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.demo-card{display:flex;flex-direction:column;align-items:flex-start;padding:27px;border:1px solid #d8c08b40;border-radius:14px;background:#111c28}.demo-card h3{font-size:23px;margin:7px 0 10px}.demo-card p:not(.eyebrow){color:var(--muted);line-height:1.6;margin:0 0 20px}.demo-card .button{margin-top:auto}.automation-section .demo-disclosure{margin-top:18px}@media(max-width:700px){.start-panel{flex-direction:column;align-items:flex-start;padding:24px}.demo-cards{grid-template-columns:1fr}}
