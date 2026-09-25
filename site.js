@@ -147,10 +147,43 @@
   const large=document.getElementById('meridian-large');
   const close=document.getElementById('meridian-close');
   if(!preview||!dialog||!large||!close)return;
+  const slides=[...large.querySelectorAll('figure')];
+  const prev=document.getElementById('meridian-prev');
+  const next=document.getElementById('meridian-next');
+  const counter=document.getElementById('meridian-count');
+  if(!slides.length||!prev||!next||!counter)return;
+  let index=0;
+  function showSlide(value){
+    index=(value+slides.length)%slides.length;
+    slides.forEach((slide,i)=>{slide.hidden=i!==index});
+    counter.textContent=`${index+1} de ${slides.length}`;
+    const upcoming=slides[(index+1)%slides.length].querySelector('img');
+    if(upcoming)upcoming.loading='eager';
+  }
+  prev.addEventListener('click',()=>showSlide(index-1));
+  next.addEventListener('click',()=>showSlide(index+1));
+  dialog.addEventListener('keydown',e=>{
+    if(e.key==='ArrowLeft'||e.key==='ArrowRight'){
+      e.preventDefault();showSlide(index+(e.key==='ArrowRight'?1:-1));
+    }
+  });
+  let touchStart=null;
+  large.addEventListener('touchstart',e=>{
+    touchStart=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null;
+  },{passive:true});
+  large.addEventListener('touchend',e=>{
+    if(!touchStart||!e.changedTouches.length)return;
+    const dx=e.changedTouches[0].clientX-touchStart.x;
+    const dy=e.changedTouches[0].clientY-touchStart.y;
+    touchStart=null;
+    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3)showSlide(index+(dx<0?1:-1));
+  },{passive:true});
+  large.addEventListener('touchcancel',()=>{touchStart=null},{passive:true});
   let previousOverflow='';
   preview.addEventListener('click',()=>{
     previousOverflow=document.body.style.overflow;
     document.body.style.overflow='hidden';
+    showSlide(0);
     dialog.showModal();
     dialog.scrollTop=0;
   });
