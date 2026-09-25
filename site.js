@@ -140,3 +140,16 @@
   if ('ResizeObserver' in window) new ResizeObserver(updateOffset).observe(header);
   updateOffset();
 })();
+
+(() => {
+  const preview=document.getElementById('meridian-open');
+  const dialog=document.getElementById('meridian-dialog');
+  const large=document.getElementById('meridian-large');
+  const close=document.getElementById('meridian-close');
+  if(!preview||!dialog||!large||!close)return;
+  const visual=preview.querySelector('.product-visual');
+  large.append(visual.cloneNode(true));
+  preview.addEventListener('click',()=>dialog.showModal());
+  close.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+})();
