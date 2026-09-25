@@ -147,9 +147,14 @@
   const large=document.getElementById('meridian-large');
   const close=document.getElementById('meridian-close');
   if(!preview||!dialog||!large||!close)return;
-  const visual=preview.querySelector('.product-visual');
-  large.append(visual.cloneNode(true));
-  preview.addEventListener('click',()=>dialog.showModal());
+  let previousOverflow='';
+  preview.addEventListener('click',()=>{
+    previousOverflow=document.body.style.overflow;
+    document.body.style.overflow='hidden';
+    dialog.showModal();
+    dialog.scrollTop=0;
+  });
+  dialog.addEventListener('close',()=>{document.body.style.overflow=previousOverflow;preview.focus()});
   close.addEventListener('click',()=>dialog.close());
-  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+  dialog.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))dialog.close()});
 })();
