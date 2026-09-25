@@ -7,7 +7,7 @@ const out=join(root,'dist');
 rmSync(out,{recursive:true,force:true});
 mkdirSync(out,{recursive:true});
 for (const f of readdirSync(root)) {
- if (/\.(css|js|png|webp|jpg|svg|ico)$/.test(f)||f==='index.html'||f==='projects'||f==='proyectos') cpSync(join(root,f),join(out,f),{recursive:true});
+ if (/\.(css|js|png|webp|jpg|svg|ico)$/.test(f)||f==='index.html'||f==='projects'||f==='demos') cpSync(join(root,f),join(out,f),{recursive:true});
 }
 const write=(f,s)=>{mkdirSync(dirname(join(out,f)),{recursive:true});writeFileSync(join(out,f),s);};
 const base='https://www.lvx-studio.com';
@@ -48,7 +48,7 @@ for(const p of posts){
  const toc=p.blocks.map((b,i)=>b[0]==='h2'?`<li><a href="#seccion-${i}">${esc(b[1])}</a></li>`:'').join('');
  write(`blog/${p.slug}/index.html`,page(p.title,p.description,'/blog/'+p.slug,`<div class="wrap"><nav class="journal-breadcrumb" aria-label="Ruta de navegación"><a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/blog">Blog</a></nav><article class="journal-article"><div class="article-intro"><p class="eyebrow">${esc(p.category)}</p><h1>${esc(p.title)}</h1><p class="journal-lead">${esc(p.description)}</p><div class="article-byline"><span>${esc(p.author)}</span><time datetime="${p.date}">${date(p.date)}</time><span>${minutes(p)} min de lectura</span></div></div><img class="article-cover" src="${esc(p.image)}" alt="${esc(p.imageAlt)}" width="1200" height="630"><div class="article-layout"><aside class="article-index"><p class="eyebrow">En este artículo</p><ol>${toc}</ol></aside><div class="article-body">${p.blocks.map(block).join('')}<div class="article-end"><span>LVX Studio · Tecnología y creación</span><a href="/blog">← Volver al blog</a></div></div></div></article><section class="journal-related" aria-label="Más artículos"><p class="eyebrow">Sigue explorando</p>${posts.filter(x=>x.slug!==p.slug).map(x=>`<a href="/blog/${x.slug}"><span>${esc(x.category)}</span><strong>${esc(x.title)} ↗</strong></a>`).join('')}</section></div>`,schema,'/logo.png',`<meta property="article:published_time" content="${p.date}T12:00:00+02:00"><meta property="article:modified_time" content="${p.modified}T12:00:00+02:00">`));
 }
-const urls=[{path:'/'},{path:'/blog'},{path:'/proyectos/savia'},...posts.map(p=>({path:'/blog/'+p.slug,modified:p.modified}))];
+const urls=[{path:'/'},{path:'/blog'},{path:'/demos/citas'},{path:'/demos/correo'},...posts.map(p=>({path:'/blog/'+p.slug,modified:p.modified}))];
 write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(u=>`<url><loc>${base+u.path}</loc>${u.modified?`<lastmod>${u.modified}</lastmod>`:''}</url>`).join('')}</urlset>\n`);
 write('robots.txt',`User-agent: *\nAllow: /\nSitemap: ${base}/sitemap.xml\n`);
 write('feed.xml',`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>El cuaderno de LVX</title><link>${base}/blog</link><description>Diseño, automatización y código en LVX Studio.</description><language>es</language>${posts.map(p=>`<item><title>${esc(p.title)}</title><link>${base}/blog/${p.slug}</link><guid isPermaLink="true">${base}/blog/${p.slug}</guid><pubDate>${new Date(p.date+'T12:00:00+02:00').toUTCString()}</pubDate><category>${esc(p.category)}</category><description>${esc(p.description)}</description></item>`).join('')}</channel></rss>\n`);

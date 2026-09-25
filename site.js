@@ -36,7 +36,7 @@
     { id: 'meridian', label: 'Meridian', words: ['meridian', 'erp', 'crm'] },
     { id: 'libros', label: 'Libros · No es magia', words: ['libro', 'magia', 'python', 'codigo', 'leer', 'lectura'] },
     { id: 'como-empezar', label: 'Cómo empezar', words: ['pack', 'plan', 'precio', 'presupuesto', 'contratar', 'coste', 'cuesta'] },
-    { id: 'demo', label: 'Demos de Savia y Rubí', words: ['demo', 'automatiza', 'simulacion', 'probar'] },
+    { id: 'demo', label: 'Demos de agentes de ejemplo', words: ['demo', 'automatiza', 'simulacion', 'probar'] },
     { id: 'proceso', label: 'De idea a sistema funcionando', words: ['proceso', 'paso', 'como funciona'] },
     { id: 'servicios', label: 'Servicios LVX', words: ['servicio', 'diseno', 'desarrollo', 'agente', 'ia'] },
     { id: 'contacto', label: 'Contacto', words: ['contacto', 'contactar', 'correo', 'email', 'hablar', 'escribir', 'instagram', 'linkedin'] },
