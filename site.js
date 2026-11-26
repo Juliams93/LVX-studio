@@ -191,3 +191,67 @@
   close.addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))dialog.close()});
 })();
+
+/* Galería accesible de Suscri en portada y página de producto. */
+(function setupSuscriGallery(){
+  const dialog=document.getElementById('suscri-dialog');
+  const stage=document.getElementById('suscri-large');
+  if(!dialog||!stage)return;
+  const openers=[...document.querySelectorAll('#suscri-open,[data-suscri-index]')];
+  const slides=[...stage.querySelectorAll('figure')];
+  const previous=document.getElementById('suscri-prev');
+  const next=document.getElementById('suscri-next');
+  const count=document.getElementById('suscri-count');
+  const closer=document.getElementById('suscri-close');
+  if(!openers.length||!slides.length||!previous||!next||!count||!closer)return;
+  let index=0,origin=null,overflow='';
+  const show=n=>{
+    index=(n+slides.length)%slides.length;
+    slides.forEach((s,i)=>s.hidden=i!==index);
+    count.textContent=(index+1)+' de '+slides.length;
+    slides[index]?.querySelector('img')?.setAttribute('loading','eager');
+    slides[(index+1)%slides.length]?.querySelector('img')?.setAttribute('loading','eager');
+    stage.scrollTop=0;
+  };
+  const open=n=>{
+    origin=document.activeElement;
+    overflow=document.body.style.overflow;
+    show(n);
+    dialog.showModal();
+    document.body.style.overflow='hidden';
+    closer.focus();
+  };
+  openers.forEach(trigger=>trigger.addEventListener('click',()=>{
+    const n=Number(trigger.dataset.suscriIndex||0);
+    open(Number.isInteger(n)?n:0);
+  }));
+  previous.addEventListener('click',()=>show(index-1));
+  next.addEventListener('click',()=>show(index+1));
+  closer.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('keydown',event=>{
+    if(event.key==='ArrowLeft'||event.key==='ArrowRight'){
+      event.preventDefault();
+      show(index+(event.key==='ArrowRight'?1:-1));
+    }
+  });
+  dialog.addEventListener('close',()=>{
+    document.body.style.overflow=overflow;
+    if(origin&&typeof origin.focus==='function')origin.focus();
+  });
+  dialog.addEventListener('click',event=>{
+    const r=dialog.getBoundingClientRect();
+    if(event.target===dialog&&(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom))dialog.close();
+  });
+  let touch=null;
+  stage.addEventListener('touchstart',event=>{
+    touch=event.touches.length===1?{x:event.touches[0].clientX,y:event.touches[0].clientY}:null;
+  },{passive:true});
+  stage.addEventListener('touchend',event=>{
+    if(!touch||!event.changedTouches.length)return;
+    const dx=event.changedTouches[0].clientX-touch.x;
+    const dy=event.changedTouches[0].clientY-touch.y;
+    touch=null;
+    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3)show(index+(dx<0?1:-1));
+  },{passive:true});
+  stage.addEventListener('touchcancel',()=>touch=null,{passive:true});
+})();
