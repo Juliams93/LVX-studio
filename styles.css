@@ -422,3 +422,24 @@ html{scroll-padding-top:var(--header-offset,182px)}
 @media(prefers-reduced-motion:reduce){
  .suscri-feature-visual img{transition:none}
 }
+
+/* Suscri modal gallery */
+button.suscri-feature-visual{font:inherit;color:inherit;text-align:left;width:100%;padding:0;border:0;cursor:zoom-in}
+.suscri-dialog{width:min(1050px,calc(100vw - 26px));max-width:1050px;max-height:92dvh;padding:0;color:var(--text);background:#0e1b27;border:1px solid #75c9bf;border-radius:16px;box-shadow:0 30px 100px #000b;overflow:hidden}
+.suscri-dialog[open]{display:flex;flex-direction:column}
+.suscri-dialog::backdrop{background:#040c12d4;backdrop-filter:blur(4px)}
+.suscri-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;border-bottom:1px solid #375c5b}
+.suscri-dialog-head strong{font-size:17px;color:#ecf8f6}
+.suscri-dialog-head button{border:0;background:transparent;color:#ecf8f6;font-size:30px;line-height:1;cursor:pointer;padding:5px 10px}
+.suscri-dialog-help{margin:0;padding:10px 20px 0;color:var(--muted);font-size:13px;line-height:1.45}
+.suscri-large{overflow:auto;min-height:0;flex:1;padding:12px 24px 5px;outline-offset:-4px}
+.suscri-large figure{margin:0;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:100%;gap:12px}
+.suscri-large figure[hidden]{display:none}
+.suscri-large img{display:block;max-width:100%;width:auto;height:auto;max-height:min(66dvh,760px);border-radius:11px;object-fit:contain;background:#f1faf8;border:1px solid #345955}
+.suscri-large figcaption{font-size:13px;color:#bfd5d2;text-align:center;line-height:1.5}
+.suscri-large figcaption a{color:#7aeee0;text-underline-offset:3px}
+.suscri-dialog-controls{display:flex;align-items:center;justify-content:center;gap:30px;border-top:1px solid #375c5b;padding:12px 16px;background:#0a1721}
+.suscri-dialog-controls button{width:46px;height:38px;background:#152d32;border:1px solid #4a7771;color:#e5fbf7;border-radius:9px;cursor:pointer;font-size:23px;line-height:1}
+.suscri-dialog-controls button:hover{border-color:var(--mint);color:var(--mint)}
+.suscri-dialog-controls span{min-width:78px;text-align:center;color:#d1e7e3;font-size:13px}
+@media(max-width:620px){.suscri-dialog-head{padding:9px 12px}.suscri-dialog-help{padding:8px 14px 0;font-size:12px}.suscri-large{padding:10px 10px 4px}.suscri-large img{max-height:67dvh}.suscri-large figcaption{font-size:12px}.suscri-dialog-controls{padding:10px}}
