@@ -1,0 +1,24 @@
+/* Galería de capturas de Suscri: ficha pública */
+.suscri-screen-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px;margin-top:28px}
+.suscri-screen-card{min-width:0;color:#e9f7f4;font:inherit;text-align:left;cursor:zoom-in;border:1px solid #315b56;background:#11252b;border-radius:13px;padding:9px;transition:border-color .2s,transform .2s}
+.suscri-screen-card:hover,.suscri-screen-card:focus-visible{border-color:#54d7c3;transform:translateY(-2px)}
+.suscri-screen-card img{display:block;width:100%;height:150px;object-fit:contain;object-position:top;background:#e9faf5;border-radius:7px}
+.suscri-screen-card span{display:block;margin:9px 2px 2px;font-size:12px;font-weight:700;line-height:1.3}
+.suscri-screen-card small{display:block;color:#94b8b4;font-size:11px;font-weight:400;margin-top:2px}
+.suscri-dialog{width:min(1050px,calc(100vw - 24px));max-height:92dvh;padding:0;color:#e9f7f4;background:#0e1b27;border:1px solid #75c9bf;border-radius:16px;box-shadow:0 30px 100px #000b;overflow:hidden}
+.suscri-dialog[open]{display:flex;flex-direction:column}.suscri-dialog::backdrop{background:#040c12d4;backdrop-filter:blur(4px)}
+.suscri-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;border-bottom:1px solid #375c5b}
+.suscri-dialog-head strong{font-size:17px}
+.suscri-dialog-head button{border:0;background:transparent;color:#ecf8f6;font-size:30px;line-height:1;cursor:pointer;padding:5px 10px}
+.suscri-dialog-help{margin:0;padding:10px 20px 0;color:#bac9ce;font-size:13px}
+.suscri-large{overflow:auto;min-height:0;flex:1;padding:12px 24px 5px}
+.suscri-large figure{margin:0;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:100%;gap:12px}
+.suscri-large figure[hidden]{display:none}
+.suscri-large img{display:block;max-width:100%;width:auto;height:auto;max-height:min(66dvh,760px);border-radius:11px;object-fit:contain;background:#f1faf8;border:1px solid #345955}
+.suscri-large figcaption{font-size:13px;color:#bfd5d2;text-align:center}.suscri-large figcaption a{color:#7aeee0}
+.suscri-dialog-controls{display:flex;align-items:center;justify-content:center;gap:30px;border-top:1px solid #375c5b;padding:12px 16px;background:#0a1721}
+.suscri-dialog-controls button{width:46px;height:38px;background:#152d32;border:1px solid #4a7771;color:#e5fbf7;border-radius:9px;cursor:pointer;font-size:23px}
+.suscri-dialog-controls span{min-width:78px;text-align:center;color:#d1e7e3;font-size:13px}
+@media(max-width:980px){.suscri-screen-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:580px){.suscri-screen-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.suscri-screen-card img{height:185px}.suscri-dialog-head{padding:10px 12px}.suscri-dialog-help{font-size:12px;padding:8px 14px 0}.suscri-large{padding:10px 8px 4px}.suscri-large figcaption{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.suscri-screen-card{transition:none}}
